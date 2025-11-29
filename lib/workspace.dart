@@ -1,3 +1,5 @@
+import 'package:first/Calendar.dart';
+import 'package:first/learn.dart';
 import 'package:flutter/material.dart';
 
 class Workspace extends StatefulWidget {
@@ -9,6 +11,15 @@ class Workspace extends StatefulWidget {
 
 class _WorkspaceState extends State<Workspace> {
   bool isMenuOpen = false; // MENU OPEN / CLOSE STATE
+
+  void navigateToCalenderPage(){
+    print("button tapped");
+    Navigator.push(context, MaterialPageRoute(builder: (context)=>CalendarPage()));
+  }
+  void navigateTolearnPage(){
+    print("button tapped");
+    Navigator.push(context, MaterialPageRoute(builder: (context)=>learn()));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +39,7 @@ class _WorkspaceState extends State<Workspace> {
                   });
                 },
                 child: Container(
-                  color: Colors.black.withOpacity(0.2), // dim background
+                  color: Colors.black45, // dim background
                 ),
               ),
             ),
@@ -150,6 +161,7 @@ class _WorkspaceState extends State<Workspace> {
               badgeColor: Color(0xFFBDF8D0),
               borderColor: Colors.transparent,
               icon: Icons.edit_document,
+              onTap:navigateToCalenderPage
             ),
 
             SizedBox(height: 20),
@@ -161,6 +173,7 @@ class _WorkspaceState extends State<Workspace> {
               badgeColor: Color(0xFFF8BBD0),
               borderColor: Colors.transparent,
               icon: Icons.description_outlined,
+              onTap: navigateTolearnPage
             ),
 
             SizedBox(height: 20),
@@ -278,62 +291,67 @@ class _WorkspaceState extends State<Workspace> {
     required Color borderColor,
     required IconData icon,
     bool isHighlighted = false,
+    VoidCallback? onTap
   }) {
-    return Container(
-      padding: const EdgeInsets.all(18),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(
-          color: borderColor,
-          width: isHighlighted ? 2 : 1,
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: const EdgeInsets.all(18),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(
+            color: borderColor,
+            width: isHighlighted ? 2 : 1,
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black12,
+              blurRadius: 6,
+              offset: Offset(0, 3),
+            )
+          ],
         ),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black12,
-            blurRadius: 6,
-            offset: Offset(0, 3),
-          )
-        ],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Icon(icon, size: 30, color: Colors.black87),
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-                decoration: BoxDecoration(
-                  color: badgeColor,
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Text(
-                  badgeText,
-                  style: TextStyle(
-                      fontSize: 12, fontWeight: FontWeight.w600),
-                ),
-              )
-            ],
-          ),
-          SizedBox(height: 12),
-          Text(
-            title,
-            style: TextStyle(
-                color: Colors.black87,
-                fontSize: 15,
-                fontWeight: FontWeight.w600),
-          ),
-          SizedBox(height: 5),
-          Text(
-            count,
-            style: TextStyle(
-                color: Colors.black,
-                fontSize: 28,
-                fontWeight: FontWeight.bold),
-          ),
-        ],
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+
+                Icon(icon, size: 30, color: Colors.black87),
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                  decoration: BoxDecoration(
+                    color: badgeColor,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Text(
+                    badgeText,
+                    style: TextStyle(
+                        fontSize: 12, fontWeight: FontWeight.w600),
+                  ),
+                )
+              ],
+            ),
+            SizedBox(height: 12),
+            Text(
+              title,
+              style: TextStyle(
+                  color: Colors.black87,
+                  fontSize: 15,
+                  fontWeight: FontWeight.w600),
+            ),
+            SizedBox(height: 5),
+            Text(
+              count,
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold),
+            ),
+          ],
+        ),
       ),
     );
   }

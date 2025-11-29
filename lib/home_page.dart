@@ -1,6 +1,7 @@
 
 import 'package:first/workspace.dart';
 import 'package:flutter/material.dart';
+import 'calendar.dart';
 class LoginScreenState extends StatefulWidget {
   const LoginScreenState({super.key,});
 
@@ -131,7 +132,6 @@ class LoginScreenState extends StatefulWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-
                 SizedBox(height: 10),
 
                 // Logo
@@ -212,13 +212,23 @@ class LoginScreenState extends StatefulWidget {
                     ),
                     borderRadius: BorderRadius.circular(30),
                   ),
-                  child: Center(
-                    child: Text(
-                      "LogIn",
-                      style: TextStyle(
-                        fontSize: 18,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
+                  child: GestureDetector(
+                    onTap: () {
+                      print('Successfully log in');
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (_) => Workspace()),
+                      );
+                    },
+                    child: Center(
+                      child: Text(
+                        "LogIn",
+                        style: TextStyle(
+                          fontSize: 18,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+
                       ),
                     ),
                   ),
