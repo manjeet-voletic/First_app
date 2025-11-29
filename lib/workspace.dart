@@ -18,7 +18,7 @@ class _WorkspaceState extends State<Workspace> {
   }
   void navigateTolearnPage(){
     print("button tapped");
-    Navigator.push(context, MaterialPageRoute(builder: (context)=>learn()));
+    Navigator.push(context, MaterialPageRoute(builder: (context)=>Learn()));
   }
 
   @override
