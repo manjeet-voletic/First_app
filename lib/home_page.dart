@@ -8,114 +8,9 @@ class LoginScreenState extends StatefulWidget {
   @override
   State<LoginScreenState> createState() => _LoginScreenState();
 }
-
   class _LoginScreenState extends State<LoginScreenState> {
   bool rememberMe = false;
   bool obscure = true;
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         backgroundColor: Color(0xFF003E9F),
-//         title: Text(
-//           "Login",
-//           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, // bold text
-//             fontSize: 30,),
-//         ),
-//       ),
-//       body: Center(
-//         child: Column(
-//           children: <Widget>[
-//             Padding(
-//               padding: const EdgeInsets.only(top: 110.0),
-//               child: Center(
-//                 child: Container(
-//                     width: 200,
-//                     height: 100,
-//                     decoration: BoxDecoration(
-//                         // color: Colors.red,
-//                         // border:BoxBorder.all(style: BorderStyle.solid,color: Colors.black,width:5, ),
-//                         borderRadius: BorderRadius.circular(50.0)),
-//                     child: Image.asset('lib/assets/images/logo.png')),
-//               ),
-//             ),
-//             Padding(
-//               //padding: const EdgeInsets.only(left:15.0,right: 15.0,top:0,bottom: 0),
-//               padding: EdgeInsets.fromLTRB(40,20,40,0),
-//               child: TextField(
-//                 decoration: InputDecoration(
-//                     border: OutlineInputBorder(),
-//                     labelText: 'Phone number, email or username',
-//                     hintText: 'Enter valid email id as abc@gmail.com'),
-//               ),
-//             ),
-//             Padding(
-//               padding: const EdgeInsets.only(
-//                   left: 40.0, right: 40.0, top: 20, bottom: 0),
-//               //padding: EdgeInsets.symmetric(horizontal: 15),
-//               child: TextField(
-//                 obscureText: true,
-//                 decoration: InputDecoration(
-//                     border: OutlineInputBorder(),
-//                     labelText: 'Password',
-//                     hintText: 'Enter secure password'),
-//               ),
-//             ),
-//
-//             SizedBox(
-//               height: 65,
-//               width: 330,
-//               child: Container(
-//                 child: Padding(
-//                   padding:  EdgeInsets.only(top: 20.0),
-//                   child: ElevatedButton(
-//                     style: ElevatedButton.styleFrom(
-//                       backgroundColor: Color(0xFF003E9F),
-//                     ),
-//                     child: Text('Log in ',
-//                       style: TextStyle(color: Colors.white, fontSize: 20,),
-//                     ),
-//                     onPressed: () {
-//                       print('Successfully log in ');
-//                       Navigator.push(context, MaterialPageRoute(builder: (_)=>Workspace()));
-//                     },
-//                   ),
-//                 ),
-//               ),
-//             ),
-//             SizedBox(
-//               height: 50,
-//             ),
-//             Container(
-//                 child: Center(
-//                   child: Row(
-//                     children: [
-//                       Padding(
-//                         padding: const EdgeInsets.only(left: 62),
-//                         child: Text('Forgot your login details? '),
-//                       ),
-//
-//                       Padding(
-//                         padding: const EdgeInsets.only(left: 1.0),
-//                         child: InkWell(
-//                             onTap: () {
-//                               print('hello');
-//                             },
-//                             child: Text(
-//                               'Get help logging in.', style: TextStyle(
-//                                 fontSize: 14, color: Colors.blue),)),
-//                       )
-//                     ],
-//                   ),
-//                 )
-//             )
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -236,7 +131,6 @@ class LoginScreenState extends StatefulWidget {
 
                 SizedBox(height: 15),
 
-                // Remember me + Forgot Password
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -303,7 +197,6 @@ class LoginScreenState extends StatefulWidget {
       ),
     );
   }
-
   Widget socialIcon(String url) {
     return Container(
       padding: EdgeInsets.all(8),

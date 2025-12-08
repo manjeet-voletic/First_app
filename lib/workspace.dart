@@ -161,7 +161,7 @@ class _WorkspaceState extends State<Workspace> {
               badgeColor: Color(0xFFBDF8D0),
               borderColor: Colors.transparent,
               icon: Icons.edit_document,
-              onTap:navigateToCalenderPage
+              onTap:navigateToCalenderPage,
             ),
 
             SizedBox(height: 20),
@@ -173,7 +173,7 @@ class _WorkspaceState extends State<Workspace> {
               badgeColor: Color(0xFFF8BBD0),
               borderColor: Colors.transparent,
               icon: Icons.description_outlined,
-              onTap: navigateTolearnPage
+              onTap: navigateTolearnPage,
             ),
 
             SizedBox(height: 20),
