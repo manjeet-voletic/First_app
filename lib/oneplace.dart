@@ -21,7 +21,7 @@ class _OneplaceState extends State<Oneplace> {
     setState(() {
       isLoading = false; // Hide Loader
     });
-
+    print("Searching");
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => Casedetails()),
@@ -162,6 +162,7 @@ class _OneplaceState extends State<Oneplace> {
                       ElevatedButton(
                         onPressed: navigateToonecasedetails,
                         child: Text("Search"),
+
                       ),
                       ElevatedButton(
                         onPressed: () {
@@ -174,7 +175,6 @@ class _OneplaceState extends State<Oneplace> {
                       ),
                     ],
                   )
-
                 ],
               ),
             ),
@@ -185,7 +185,7 @@ class _OneplaceState extends State<Oneplace> {
             Container(
               width: double.infinity,
               height: double.infinity,
-              color: Colors.black.withOpacity(0.35), // Background blur
+              color: Colors.black54, // Background blur
               child: Center(
                 child: Container(
                   padding: EdgeInsets.symmetric(horizontal: 30, vertical: 25),
